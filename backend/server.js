@@ -9,11 +9,14 @@ connectDB();
 
 const app = express();
 
+// Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Routes Middleware
 app.use("/api/goals", require("./routes/goalRoutes"));
 
+// Error Middleware
 app.use(errorHandler);
 
 app.listen(port, () => console.log(`Server Started on port ${port}`));
