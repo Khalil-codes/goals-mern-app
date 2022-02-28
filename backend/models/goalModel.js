@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
 
+// Goal Schema
 const goalSchema = mongoose.Schema(
     {
         text: {
             type: String,
-            require: [true, "Please add text"],
+            required: [true, "Please add text"],
         },
     },
     {
