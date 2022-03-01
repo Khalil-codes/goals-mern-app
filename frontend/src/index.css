@@ -62,12 +62,12 @@ h3 {
     margin-left: 20px;
 }
 
-.header ul li a {
+.header ul li a, .header ul li span {
     display: flex;
     align-items: center;
 }
 
-.header ul li a:hover {
+.header ul li a:hover, .header ul li span {
     color: #777;
 }
 

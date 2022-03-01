@@ -34,11 +34,16 @@ const Header = () => {
                         </li>
                     </>
                 ) : (
-                    <li>
-                        <button className="btn" onClick={handleLogout}>
-                            <FaSignOutAlt /> Logout
-                        </button>
-                    </li>
+                    <>
+                        <li>
+                            <span>{user?.name}</span>
+                        </li>
+                        <li>
+                            <button className="btn" onClick={handleLogout}>
+                                <FaSignOutAlt /> Logout
+                            </button>
+                        </li>
+                    </>
                 )}
             </ul>
         </header>
