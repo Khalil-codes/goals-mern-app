@@ -7,7 +7,7 @@ import { loginUser, reset } from "../redux/auth/authSlice";
 import { useAuth } from "../redux/store";
 
 const Login = () => {
-    const { user, isLoading, isSuccess, isError, message } = useAuth();
+    const { isLoading, isError, message } = useAuth();
     const dispatch = useDispatch();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { FaUser } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { useAuth } from "../redux/store";
@@ -9,9 +8,8 @@ import { useEffect } from "react";
 import Spinner from "../components/Spinner";
 
 const Register = () => {
-    const { user, isLoading, isSuccess, isError, message } = useAuth();
+    const { isLoading, isError, message } = useAuth();
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
