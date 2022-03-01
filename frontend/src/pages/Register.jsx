@@ -22,13 +22,10 @@ const Register = () => {
             if (isError) {
                 toast.error(message);
             }
-            if (isSuccess || user) {
-                navigate("/");
-            }
             dispatch(reset());
         };
         cb();
-    }, [user, isError, isSuccess, message, navigate, dispatch]);
+    }, [isError, message, dispatch]);
     const handleSubmit = (e) => {
         e.preventDefault();
         if (password !== password2) {
@@ -42,6 +39,7 @@ const Register = () => {
             dispatch(registerUser(userData));
         }
     };
+
     if (isLoading) return <Spinner />;
     return (
         <>

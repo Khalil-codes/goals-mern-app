@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Spinner from "../components/Spinner";
 import { loginUser, reset } from "../redux/auth/authSlice";
 import { useAuth } from "../redux/store";
 
 const Login = () => {
     const { user, isLoading, isSuccess, isError, message } = useAuth();
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     useEffect(() => {
@@ -17,22 +16,19 @@ const Login = () => {
             if (isError) {
                 toast.error(message);
             }
-            if (isSuccess || user) {
-                navigate("/");
-            }
             dispatch(reset());
         };
         cb();
-    }, [user, isError, isSuccess, message, navigate, dispatch]);
-    const handleSubmit = (e) => {
+    }, [isError, message, dispatch]);
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const userData = {
             email,
             password,
         };
         dispatch(loginUser(userData));
-        console.log(email, password);
     };
+    if (isLoading) return <Spinner />;
     return (
         <>
             <section className="heading">
