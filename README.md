@@ -1,6 +1,6 @@
 # Getting Started with App
 
-Goalsy is a Full Stack App that is built using react, node, express and mongoDB.
+Goalsy is a Full Stack App. The Frontend is built using React, Redux and Redux Toolkit. The Backend is built using Node, Express and MongoDB. I've used jsonwebtoken to generate JWT and bcryptjs to hash password in backend. Only Authenticated user is authorized to Add Goal, Delete Goal, View Goals and Update Goal.
 
 ## Available Scripts
 
